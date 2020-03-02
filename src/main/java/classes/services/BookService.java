@@ -7,12 +7,10 @@ import java.util.List;
 
 public class BookService {
 
-    private Book[] books;
+    private List<Book> books = new ArrayList<>();
 
-    public BookService(Book[] books) {
-
-        this.books = books;
-
+    public void addBook(Book book){
+        books.add(book);
     }
 
     public List<Book> getBooksByAuthor(String author) {

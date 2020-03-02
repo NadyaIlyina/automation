@@ -2,7 +2,9 @@ package classes;
 
 import classes.services.BookService;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Создать классы, спецификации которых приведены ниже. Определить конструкторы и методы setТип(), getТип(), toString().
@@ -22,17 +24,19 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Book[] books = new Book[3];
-        BookService service = new BookService(books);
-        books[0] = new Book(0, "Hi", Arrays.asList("J", "S", "B"), "S.Peter", 2020,
-                205, 23.6, "no");
-        books[1] = new Book(1, "Hello", Arrays.asList("A", "S", "G"), "Minsk", 2015,
-                205, 23.6, "no");
-        books[2] = new Book(2, "GladToSeeYou", Arrays.asList("J", "B", "A"), "S.Peter", 2018,
-                205, 23.6, "no");
 
-        for (int i=0;i<3;i++){
-            System.out.println(books[i].getName());
+        List<Book> books = new ArrayList<>();
+        BookService service = new BookService();
+
+        service.addBook(new Book(0, "Hi", Arrays.asList("J", "S", "B"), "S.Peter", 2020,
+                205, 23.6, "no"));
+        service.addBook(new Book(1, "Hello", Arrays.asList("A", "S", "G"), "Minsk", 2015,
+                205, 23.6, "no"));
+        service.addBook(new Book(2, "GladToSeeYou", Arrays.asList("J", "B", "A"), "S.Peter", 2018,
+                205, 23.6, "no"));
+
+        for (Book book : books) {
+            System.out.println(book.getName());
         }
 
         System.out.println("Books by Author: " + service.getBooksByAuthor("B"));
