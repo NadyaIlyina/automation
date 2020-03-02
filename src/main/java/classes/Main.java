@@ -21,11 +21,9 @@ import java.util.Arrays;
  * */
 public class Main {
 
-    private static Book[] books = new Book[3];
-    private static BookService service = new BookService(books);
-
     public static void main(String[] args) {
-
+        Book[] books = new Book[3];
+        BookService service = new BookService(books);
         books[0] = new Book(0, "Hi", Arrays.asList("J", "S", "B"), "S.Peter", 2020,
                 205, 23.6, "no");
         books[1] = new Book(1, "Hello", Arrays.asList("A", "S", "G"), "Minsk", 2015,
