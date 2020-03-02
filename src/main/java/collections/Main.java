@@ -1,11 +1,18 @@
 package collections;
 
+import collections.AudioRecord.domain.Disc;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 /**
+ * Звукозапись. Определить иерархию музыкальных композиций. Записать
+ * на диск сборку. Подсчитать продолжительность. Провести перестановку
+ * композиций диска на основе принадлежности к стилю. Найти композицию,
+ * соответствующую заданному диапазону длины треков.
+ *
  * 4. Занести стихотворение в список. Провести сортировку по возрастанию длин строк.
  *
  * 7. Задана строка, состоящая из символов «(», «)», «[», «]», «{», «}». Проверить правильность расстановки скобок.
@@ -13,7 +20,7 @@ import java.util.List;
  */
 public class Main {
 
-    private static Task7 task7=new Task7();
+    private static Task7 task7 = new Task7();
 
     private static final String SONNET =
             "One day I wrote her name upon the strand,\n" +
@@ -34,6 +41,10 @@ public class Main {
     private static Task4 task4 = new Task4();
 
     public static void main(String[] args) {
+
+        Disc disc = new Disc();
+        disc.initDisk();
+        disc.sortings();
 
         List<String> lines = Arrays.asList(SONNET.split("\n"));
         System.out.println(lines);

@@ -1,4 +1,4 @@
-package collections.AudioRecord.music;
+package collections.AudioRecord.domain;
 
 public class Track {
 

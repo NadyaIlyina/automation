@@ -1,34 +1,28 @@
 package collections.AudioRecord.service;
 
-import collections.AudioRecord.music.MusicStyles;
-import collections.AudioRecord.music.Track;
+import collections.AudioRecord.domain.MusicStyles;
+import collections.AudioRecord.domain.Track;
 
 import java.util.List;
 
 public class MusicService {
 
-    private static final String TOTAL_DURATION = "Total duration: ";
-    private static final String MIN = " min";
-    private Double duration = 0.0;
+    public void getTracklist(List<Track> list) {
 
-
-    public void getTracklist(List<Track> tracklist) {
-
-        for (Track t : tracklist) {
+        for (Track t : list) {
             System.out.println(t.toString());
         }
-
-        System.out.println();
     }
 
-    public void getTotalDuration(List<Track> tracklist) {
+    public void getTotalDuration(List<Track> list) {
 
-        for (int i = 0; i < tracklist.size(); i++) {
-            duration += tracklist.get(i).getDuration();
+        double duration = 0.0;
+
+        for (Track track : list) {
+            duration += track.getDuration();
         }
 
-        System.out.println(TOTAL_DURATION + duration + MIN);
-        System.out.println();
+        System.out.println("Total duration:"  + duration + "min\n");
     }
 
     public void sortingByStyle(List<Track> tracklist, MusicStyles style) {
@@ -49,9 +43,9 @@ public class MusicService {
 
     public void findByRange(Double from, Double to, List<Track> tracklist) {
 
-        for (int i = 0; i < tracklist.size(); i++) {
-            if (tracklist.get(i).getDuration() >= from && tracklist.get(i).getDuration() <= to) {
-                System.out.println(tracklist.get(i).toString());
+        for (Track track : tracklist) {
+            if (track.getDuration() >= from && track.getDuration() <= to) {
+                System.out.println(track.toString());
             }
         }
     }
