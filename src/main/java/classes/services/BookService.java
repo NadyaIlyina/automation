@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BookService {
 
-    private static Book[] books;
+    private Book[] books;
 
     public BookService(Book[] books) {
 
@@ -15,7 +15,7 @@ public class BookService {
 
     }
 
-    public static List<Book> getBooksByAuthor(String author) {
+    public List<Book> getBooksByAuthor(String author) {
 
         List<Book> result = new ArrayList<>();
 
@@ -30,7 +30,7 @@ public class BookService {
         return result;
     }
 
-    public static List<Book> getBooksByPublisher(String publisher) {
+    public List<Book> getBooksByPublisher(String publisher) {
 
         List<Book> result = new ArrayList<>();
 
@@ -43,7 +43,7 @@ public class BookService {
         return result;
     }
 
-    public static List<Book> getBooksAfterYear(int year) {
+    public List<Book> getBooksAfterYear(int year) {
 
         List<Book> result = new ArrayList<>();
 
