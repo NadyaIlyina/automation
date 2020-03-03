@@ -25,10 +25,6 @@ public class Book {
         this.bindingType = type;
     }
 
-    public Book() {
-    }
-
-
     public int getId() {
         return id;
     }
@@ -95,15 +91,14 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", authors=" + authors +
-                ", publisher='" + publisher + '\'' +
-                ", year=" + year +
-                ", pages=" + pages +
-                ", cost=" + cost +
-                ", bindingType='" + bindingType + '\'' +
-                '}';
+        return "Book: " +
+                "id=" + id + ", \n"
+                + "name='" + name + ", \n"
+                + "authors=" + authors + ", \n"
+                + "publisher='" + publisher + ", \n"
+                + "year=" + year + ", \n"
+                + "pages=" + pages + ", \n"
+                + "cost=" + cost + ", \n"
+                + "bindingType=" + bindingType + " }\n";
     }
 }

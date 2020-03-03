@@ -7,7 +7,6 @@ import java.util.List;
 
 import static collections.AudioRecord.domain.MusicStyles.*;
 
-
 public class Disc {
 
     private List<Track> tracklist = new ArrayList<>();

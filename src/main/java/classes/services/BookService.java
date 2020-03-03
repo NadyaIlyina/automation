@@ -4,12 +4,13 @@ import classes.Book;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BookService {
 
     private List<Book> books = new ArrayList<>();
 
-    public void addBook(Book book){
+    public void addBook(Book book) {
         books.add(book);
     }
 
@@ -17,40 +18,19 @@ public class BookService {
 
         List<Book> result = new ArrayList<>();
 
-        for (Book book : books) {
-            for (String item : book.getAuthors()) {
-                if (author.equals(item)) {
-                    result.add(book);
-                }
-            }
-        }
+        books.forEach(book -> book.getAuthors().stream().filter(author::equals).map(item -> book).forEachOrdered(result::add));
 
         return result;
     }
 
     public List<Book> getBooksByPublisher(String publisher) {
 
-        List<Book> result = new ArrayList<>();
+        return books.stream().filter(item -> publisher.equals(item.getPublisher())).collect(Collectors.toList());
 
-        for (Book item : books) {
-            if (publisher.equals(item.getPublisher())) {
-                result.add(item);
-            }
-        }
-
-        return result;
     }
 
     public List<Book> getBooksAfterYear(int year) {
 
-        List<Book> result = new ArrayList<>();
-
-        for (Book item : books) {
-            if (year < item.getYear()) {
-                result.add(item);
-            }
-        }
-
-        return result;
+        return books.stream().filter(item -> year == item.getYear()).collect(Collectors.toList());
     }
 }

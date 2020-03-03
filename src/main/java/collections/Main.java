@@ -1,10 +1,8 @@
 package collections;
 
 import collections.AudioRecord.domain.Disc;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -12,16 +10,15 @@ import java.util.List;
  * на диск сборку. Подсчитать продолжительность. Провести перестановку
  * композиций диска на основе принадлежности к стилю. Найти композицию,
  * соответствующую заданному диапазону длины треков.
- *
+ * <p>
  * 4. Занести стихотворение в список. Провести сортировку по возрастанию длин строк.
- *
+ * <p>
  * 7. Задана строка, состоящая из символов «(», «)», «[», «]», «{», «}». Проверить правильность расстановки скобок.
  * Использовать стек.
  */
 public class Main {
 
     private static Task7 task7 = new Task7();
-
     private static final String SONNET =
             "One day I wrote her name upon the strand,\n" +
                     "But came the waves and washed it away:\n" +
@@ -38,8 +35,6 @@ public class Main {
                     "Where when as death shall all the world subdue,\n" +
                     "Our love shall live, and later life renew.";
 
-    private static Task4 task4 = new Task4();
-
     public static void main(String[] args) {
 
         Disc disc = new Disc();
@@ -47,14 +42,17 @@ public class Main {
         disc.sortings();
 
         List<String> lines = Arrays.asList(SONNET.split("\n"));
-        System.out.println(lines);
+        System.out.println("\nСтихотворение как список: ");
+        lines.forEach(System.out::println);
 
-        Collections.sort(lines, task4.sortSonnet());
-        System.out.println(lines);
+        lines.sort(Task4.sortSonnet());
+        System.out.println("\nОтсортированное стихотворение: ");
+        lines.forEach(System.out::println);
 
         List<String> line = new ArrayList<>();
         line.add("{([])}");
-        System.out.println("Task 7: " + task7.checkLine(line));
+        System.out.println("\n" + line);
+        System.out.println("\nПрвильность расстановки скобок: " + task7.checkLine(line));
 
     }
 }

@@ -35,13 +35,9 @@ public class Main {
         service.addBook(new Book(2, "GladToSeeYou", Arrays.asList("J", "B", "A"), "S.Peter", 2018,
                 205, 23.6, "no"));
 
-        for (Book book : books) {
-            System.out.println(book.getName());
-        }
-
-        System.out.println("Books by Author: " + service.getBooksByAuthor("B"));
-        System.out.println("Books by Publisher: " + service.getBooksByPublisher("S.Peter"));
-        System.out.println("Books after 2009: " + service.getBooksAfterYear(2018));
+        System.out.println("Books by Author: \n" + service.getBooksByAuthor("B"));
+        System.out.println("Books by Publisher: \n" + service.getBooksByPublisher("S.Peter"));
+        System.out.println("Books after 2018:\n " + service.getBooksAfterYear(2018));
 
     }
 }
