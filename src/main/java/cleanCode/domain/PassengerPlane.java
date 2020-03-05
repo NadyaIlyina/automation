@@ -2,7 +2,7 @@ package cleanCode.domain;
 
 import java.util.Objects;
 
-public class PassengerPlane extends Plane{
+public class PassengerPlane extends Plane {
 
     private int passengersCapacity;
 
@@ -17,18 +17,11 @@ public class PassengerPlane extends Plane{
     }
 
     @Override
-    public String toString() {
+    public boolean equals(Object object) {
 
-        return super.toString().replace("}",
-                ", passengersCapacity=" + passengersCapacity +
-                '}');
-    }
+        PassengerPlane plane = (PassengerPlane) object;
 
-    @Override
-    public boolean equals(Object o) {
-
-        PassengerPlane plane = (PassengerPlane) o;
-        return super.equals(o) && passengersCapacity == plane.passengersCapacity;
+        return super.equals(object) && passengersCapacity == plane.passengersCapacity;
     }
 
     @Override
@@ -36,4 +29,11 @@ public class PassengerPlane extends Plane{
 
         return Objects.hash(super.hashCode(), passengersCapacity);
     }
+
+    @Override
+    public String toString() {
+
+        return super.toString().concat(", passengersCapacity=" + passengersCapacity + "\n");
+    }
+
 }

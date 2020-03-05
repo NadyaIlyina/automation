@@ -22,27 +22,27 @@ abstract public class Plane {
         return model;
     }
 
-    public int getMS() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public int Get_Max_Flight_Distance() {
+    public int getMaxFlightDistance() {
+
         return maxFlightDistance;
     }
 
-    public int getMinLoadCapacity() {
+    public int getMaxLoadCapacity() {
         return maxLoadCapacity;
     }
 
     @Override
     public String toString() {
 
-        return "Plane{" +
-                "model='" + model + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
-                '}';
+        return "\nPlane:\n" +
+                " model='" + model + ",\n" +
+                " maxSpeed=" + maxSpeed + ",\n" +
+                " maxFlightDistance=" + maxFlightDistance + ",\n" +
+                " maxLoadCapacity=" + maxLoadCapacity + "\n";
     }
 
     @Override

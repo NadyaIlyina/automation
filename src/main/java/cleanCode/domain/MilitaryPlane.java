@@ -2,7 +2,7 @@ package cleanCode.domain;
 
 import java.util.Objects;
 
-public class MilitaryPlane extends Plane{
+public class MilitaryPlane extends Plane {
 
     private MilitaryType type;
 
@@ -17,14 +17,6 @@ public class MilitaryPlane extends Plane{
     }
 
     @Override
-    public String toString() {
-
-        return super.toString().replace("}",
-                ", type=" + type +
-                '}');
-    }
-
-    @Override
     public boolean equals(Object o) {
 
         MilitaryPlane that = (MilitaryPlane) o;
@@ -35,5 +27,11 @@ public class MilitaryPlane extends Plane{
     public int hashCode() {
 
         return Objects.hash(super.hashCode(), type);
+    }
+
+    @Override
+    public String toString() {
+
+        return super.toString().concat(", type=" + type + "\n");
     }
 }

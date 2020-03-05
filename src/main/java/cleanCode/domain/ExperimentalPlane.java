@@ -1,6 +1,6 @@
 package cleanCode.domain;
 
-public class ExperimentalPlane extends Plane{
+public class ExperimentalPlane extends Plane {
 
     private ExperimentalTypes type;
     private ClassificationLevel classificationLevel;
@@ -13,11 +13,11 @@ public class ExperimentalPlane extends Plane{
         this.classificationLevel = classificationLevel;
     }
 
-    public ClassificationLevel getClassificationLevel(){
+    public ClassificationLevel getClassificationLevel() {
         return classificationLevel;
     }
 
-    public void setClassificationLevel(ClassificationLevel classificationLevel){
+    public void setClassificationLevel(ClassificationLevel classificationLevel) {
         this.classificationLevel = classificationLevel;
     }
 
@@ -34,8 +34,7 @@ public class ExperimentalPlane extends Plane{
     @Override
     public String toString() {
 
-        return "ExperimentalPlane{" +
-                "model='" + model + '\'' +
-                '}';
+        return super.toString()
+                .concat(", type=" + type + ", \n" + "classification level = " + classificationLevel + "\n");
     }
 }
