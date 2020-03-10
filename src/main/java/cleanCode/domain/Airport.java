@@ -38,28 +38,18 @@ public class Airport {
 
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
 
-        List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
 
-        for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getType() == MilitaryType.TRANSPORT)
-                transportMilitaryPlanes.add(plane);
-        }
-
-        return transportMilitaryPlanes;
+        return militaryPlanes.stream().filter(plane -> plane.getType() == MilitaryType.TRANSPORT)
+                .collect(Collectors.toList());
     }
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
 
-        List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
 
-        for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getType() == MilitaryType.BOMBER)
-                bomberMilitaryPlanes.add(plane);
-        }
-
-        return bomberMilitaryPlanes;
+        return militaryPlanes.stream().filter(plane -> plane.getType() == MilitaryType.BOMBER)
+                .collect(Collectors.toList());
 
     }
 
