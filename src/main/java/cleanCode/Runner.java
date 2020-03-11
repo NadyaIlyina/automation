@@ -1,7 +1,6 @@
 package cleanCode;
 
 import cleanCode.domain.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,5 +57,6 @@ public class Runner {
         System.out.println("Planes sorted by max speed: \n" + airport.sortByMaxSpeed());
         System.out.println("Planes sorted by max load capacity: \n" + airport.sortByMaxLoadCapacity());
         System.out.println("Plane with max passenger capacity: \n" + airport.getPassengerPlaneWithMaxPassengersCapacity());
+
     }
 }
